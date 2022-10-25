@@ -11,6 +11,8 @@
 
 <img src ="Screenshots/img3.jpeg" width="150"/>
 
+<img src ="Screenshots/img4.jpeg" width="150"/>
+
 </div>
 </body>
 </html>
@@ -24,7 +26,10 @@
 
 <h3># MVVM Clean Architecture</h3>
 <h3># TMDB Client</h3>
-
+<h3># View Popular Movies</h3>
+<h3># View Popular TV Shows</h3>
+<h3># View Popular Artists</h3>
+<h3># View Upcoming Moviest</h3>
 
 <br/>
 <br/>
