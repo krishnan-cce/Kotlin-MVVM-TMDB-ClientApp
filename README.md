@@ -2,7 +2,7 @@
 <h1>TMDB Client App</h1>
 
 <body>
-
+<div id="Images">
 <img src ="Screenshots/img0.jpeg" width="150"/>
 
 <img src ="Screenshots/img1.jpeg" width="150"/>
