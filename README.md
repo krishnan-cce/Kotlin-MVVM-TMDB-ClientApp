@@ -11,7 +11,6 @@
 
 <img src ="Screenshots/img3.jpeg" width="150"/>
 
-<img src ="Screenshots/img4.jpeg" width="150"/>
 </div>
 </body>
 </html>
