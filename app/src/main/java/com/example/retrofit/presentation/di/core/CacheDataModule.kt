@@ -7,6 +7,8 @@ import com.example.retrofit.data.repository.movie.datasource.MovieCacheDataSourc
 import com.example.retrofit.data.repository.movie.datasourceImpl.MovieCacheDataSourceImpl
 import com.example.retrofit.data.repository.tvshow.datasource.TvShowCacheDataSource
 import com.example.retrofit.data.repository.tvshow.datasourceImpl.TvShowCacheDataSourceImpl
+import com.example.retrofit.data.repository.upcoming.datasource.UpComingCacheDataSource
+import com.example.retrofit.data.repository.upcoming.datasourceImpl.UpComingCacheDataSourceImpl
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -31,5 +33,9 @@ class CacheDataModule {
         return ArtistCacheDataSourceImpl()
     }
 
-
+    @Singleton
+    @Provides
+    fun provideUpComingCacheDataSource(): UpComingCacheDataSource {
+        return UpComingCacheDataSourceImpl()
+    }
 }

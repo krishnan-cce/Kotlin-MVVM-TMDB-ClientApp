@@ -9,6 +9,7 @@ import com.example.retrofit.databinding.ActivityHomeBinding
 import com.example.retrofit.presentation.artist.ArtistActivity
 import com.example.retrofit.presentation.movie.MovieActivity
 import com.example.retrofit.presentation.tv.TvShowActivity
+import com.example.retrofit.presentation.upcoming.UpcomingActivity
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
@@ -28,6 +29,11 @@ class HomeActivity : AppCompatActivity() {
 
         binding.artistsButton.setOnClickListener {
             val intent = Intent(this, ArtistActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.upcomingButton.setOnClickListener {
+            val intent = Intent(this, UpcomingActivity::class.java)
             startActivity(intent)
         }
     }

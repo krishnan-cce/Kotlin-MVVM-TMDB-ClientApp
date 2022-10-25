@@ -13,8 +13,13 @@ import com.example.retrofit.data.repository.tvshow.TvShowRepositoryImpl
 import com.example.retrofit.data.repository.tvshow.datasource.TvShowCacheDataSource
 import com.example.retrofit.data.repository.tvshow.datasource.TvShowLocalDataSource
 import com.example.retrofit.data.repository.tvshow.datasource.TvShowRemoteDatasource
+import com.example.retrofit.data.repository.upcoming.UpComingRepositoryImpl
+import com.example.retrofit.data.repository.upcoming.datasource.UpComingCacheDataSource
+import com.example.retrofit.data.repository.upcoming.datasource.UpComingLocalDataSource
+import com.example.retrofit.data.repository.upcoming.datasource.UpComingRemoteDataSource
 import com.example.retrofit.domain.repository.MovieRepository
 import com.example.retrofit.domain.repository.TvShowRepository
+import com.example.retrofit.domain.repository.UpComingRepository
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -72,5 +77,20 @@ class RepositoryModule {
 
 
     }
+    @Provides
+    @Singleton
+    fun provideUpcomingRepository(
+        upComingRemoteDataSource: UpComingRemoteDataSource,
+        upComingLocalDataSource: UpComingLocalDataSource,
+        upComingCacheDataSource: UpComingCacheDataSource
+    ): UpComingRepository {
 
+        return UpComingRepositoryImpl(
+            upComingRemoteDataSource,
+            upComingLocalDataSource,
+            upComingCacheDataSource
+        )
+
+
+    }
 }

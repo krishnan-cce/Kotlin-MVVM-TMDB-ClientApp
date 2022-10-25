@@ -2,11 +2,8 @@ package com.example.retrofit.presentation.di.core
 
 import android.content.Context
 import androidx.room.Room
-import com.example.retrofit.data.db.ArtistDao
+import com.example.retrofit.data.db.*
 
-import com.example.retrofit.data.db.MovieDao
-import com.example.retrofit.data.db.TMDBDatabase
-import com.example.retrofit.data.db.TvShowDao
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -38,6 +35,11 @@ class DataBaseModule {
     }
 
 
+    @Singleton
+    @Provides
+    fun provideUpComingDao(tmdbDatabase: TMDBDatabase): UpComingDao {
+        return tmdbDatabase.upcomingDo()
+    }
 
 
 

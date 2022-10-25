@@ -8,6 +8,8 @@ import com.example.retrofit.data.repository.movie.datasource.MovieRemoteDatasour
 import com.example.retrofit.data.repository.movie.datasourceImpl.MovieRemoteDataSourceImpl
 import com.example.retrofit.data.repository.tvshow.datasource.TvShowRemoteDatasource
 import com.example.retrofit.data.repository.tvshow.datasourceImpl.TvShowRemoteDataSourceImpl
+import com.example.retrofit.data.repository.upcoming.datasource.UpComingRemoteDataSource
+import com.example.retrofit.data.repository.upcoming.datasourceImpl.UpComingRemoteDataSourceImpl
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -37,6 +39,12 @@ class RemoteDataModule(private val apiKey: String) {
             tmdbService, apiKey
         )
     }
-
+    @Singleton
+    @Provides
+    fun provideUpComingRemoteDataSource(tmdbService: TMDBService): UpComingRemoteDataSource {
+        return UpComingRemoteDataSourceImpl(
+            tmdbService, apiKey
+        )
+    }
 
 }

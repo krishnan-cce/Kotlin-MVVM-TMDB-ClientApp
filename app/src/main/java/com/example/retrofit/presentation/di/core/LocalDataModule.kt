@@ -5,12 +5,15 @@ import com.example.retrofit.data.db.ArtistDao
 
 import com.example.retrofit.data.db.MovieDao
 import com.example.retrofit.data.db.TvShowDao
+import com.example.retrofit.data.db.UpComingDao
 import com.example.retrofit.data.repository.artist.datasource.ArtistLocalDataSource
 import com.example.retrofit.data.repository.artist.datasourceImpl.ArtistLocalDataSourceImpl
 import com.example.retrofit.data.repository.movie.datasource.MovieLocalDataSource
 import com.example.retrofit.data.repository.movie.datasourceImpl.MovieLocalDataSourceImpl
 import com.example.retrofit.data.repository.tvshow.datasource.TvShowLocalDataSource
 import com.example.retrofit.data.repository.tvshow.datasourceImpl.TvShowLocalDataSourceImpl
+import com.example.retrofit.data.repository.upcoming.datasource.UpComingLocalDataSource
+import com.example.retrofit.data.repository.upcoming.datasourceImpl.UpComingLocalDataSourceImpl
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -36,5 +39,9 @@ class LocalDataModule {
         return ArtistLocalDataSourceImpl(artistDao)
     }
 
-
+    @Singleton
+    @Provides
+    fun provideUpComingLocalDataSource(upcomingDao : UpComingDao): UpComingLocalDataSource {
+        return UpComingLocalDataSourceImpl(upcomingDao)
+    }
 }

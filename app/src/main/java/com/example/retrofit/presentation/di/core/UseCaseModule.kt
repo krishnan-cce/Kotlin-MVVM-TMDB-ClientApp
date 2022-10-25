@@ -4,6 +4,7 @@ package com.example.retrofit.presentation.di.core
 import com.example.retrofit.domain.repository.ArtistsRepository
 import com.example.retrofit.domain.repository.MovieRepository
 import com.example.retrofit.domain.repository.TvShowRepository
+import com.example.retrofit.domain.repository.UpComingRepository
 import com.example.retrofit.domain.usecase.*
 import dagger.Module
 import dagger.Provides
@@ -36,6 +37,15 @@ class UseCaseModule {
     @Provides
     fun provideUpdateArtistUseCase(artistRepository: ArtistsRepository):UpdateArtistsUseCase{
         return UpdateArtistsUseCase(artistRepository)
+    }
+
+    @Provides
+    fun provideGetUpComingUseCase(upComingRepository: UpComingRepository): GetUpComingUseCase {
+        return GetUpComingUseCase(upComingRepository)
+    }
+    @Provides
+    fun provideUpdateUpComingUseCase(upComingRepository: UpComingRepository):UpdateUpComingUseCase{
+        return UpdateUpComingUseCase(upComingRepository)
     }
 
 }

@@ -7,6 +7,7 @@ import com.example.retrofit.presentation.di.artist.ArtistSubComponent
 import com.example.retrofit.presentation.di.core.*
 import com.example.retrofit.presentation.di.movie.MovieSubComponent
 import com.example.retrofit.presentation.di.tvshow.TvShowSubComponent
+import com.example.retrofit.presentation.di.upcoming.UpComingSubComponent
 import dagger.Module
 import dagger.Provides
 
@@ -33,6 +34,10 @@ private lateinit var appComponent: AppComponent
 
     override fun createArtistSubComponent(): ArtistSubComponent {
         return appComponent.artistSubComponent().create()
+    }
+
+    override fun createUpComingSubComponent(): UpComingSubComponent {
+        return appComponent.upcomingSubComponent().create()
     }
 
 }
